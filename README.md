@@ -6,7 +6,7 @@
 
 3. enter`./taskman -w  first_task`
 
-4. a task names `first_task` will be created for today
+4. a task named `first_task` will be created for today, storing in a txt file named `tasks.txt`
 
    ```
    task first_task added to 20210703 with ind = 43
