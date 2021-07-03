@@ -4,8 +4,8 @@
 
 2. go to folder `execution file`
 
-3. enter`./taskman -w  first_task`
-   (alt: just stay at the top folder and enter `python3 taskman -w first_task`)
+3. enter`./taskman -w  first_task`  
+   (alt: just stay at the top folder and enter `python3 taskman.py -w first_task`)
 
 4. a task named `first_task` will be created for today, storing in a txt file named `tasks.txt`
 
