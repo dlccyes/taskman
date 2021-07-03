@@ -13,23 +13,25 @@
    task first_task added to 20210703 with ind = 43
    (0.0041s)
    ```
+tips: you can add alias to you `~/.bash_aliases` to use this more conveniently  
+e.g. if you clone this to `~/github`, you can add `alias task="cd ~/github/taskman/'execution file' && ./taskman"` to `.bash_aliases`, after that, you can `task -w sometask` to create tasks
 
 ## Show Tasks
 ### Show all tasks
-`task -s `
+`./taskman -s `
 ### Show tasks of a specific date
-`task -s [date]`  
-e.g. `task -s 20210704` → show tasks in 2021.7.4
+`./taskman -s [date]`  
+e.g. `./taskman -s 20210704` → show tasks in 2021.7.4
 ### Show tasks within X days
-`task -s [num]`  
-e.g. `task -s 3` → show tasks within 3 days
+`./taskman -s [num]`  
+e.g. `./taskman -s 3` → show tasks within 3 days
 
 ## Delete Tasks
-`task -d [index]`
+`./taskman -d [index]`
 
 ## Create Tasks
-`task -w [contents] [date]`  
-e.g. `task -w do_homework 20210706`  
+`./taskman -w [contents] [date]`  
+e.g. `./taskman -w do_homework 20210706`  
 
 omitting `[date]` will automatically create for today 
 
