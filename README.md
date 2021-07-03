@@ -14,6 +14,26 @@
    (0.0041s)
    ```
 
+## Show Tasks
+### Show all tasks
+`task -s `
+### Show tasks of a specific date
+`task -s [date]`  
+e.g. `task -s 20210704` → show tasks in 2021.7.4
+### Show tasks within X days
+`task -s [num]`  
+e.g. `task -s 3` → show tasks within 3 days
+
+## Delete Tasks
+`task -d [index]`
+
+## Create Tasks
+`task -w [contents] [date]`  
+e.g. `task -w do_homework 20210706`  
+
+omitting `[date]` will automatically create for today 
+
+
 ## Show All the Commands
 
 Any misuse of commands starting with `./taskman` will show all the available commands.  
