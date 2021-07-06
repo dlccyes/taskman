@@ -54,3 +54,11 @@ e.g.
        -a index msg         : alter the description of the indexed task
        -u index msg         : update task i.e. append msg to the indexed task
    ```
+
+## demo
+assuming that you download the execution file in `/mnt/c/taskman`
+![Image](https://i.imgur.com/t1igxsq.png)   
+![Image](https://i.imgur.com/Y4tojok.png)
+![Image](https://i.imgur.com/4jf6ZzK.png)
+![Image](https://i.imgur.com/UYXB3jM.png)
+![Image](https://i.imgur.com/2WV730s.png)
