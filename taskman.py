@@ -48,6 +48,7 @@ available_commands = 'available commands:\n\
     -ws task_name (date) : write and show\n\
     -a index msg         : alter the description of the indexed task\n\
     -u index msg         : update task i.e. append msg to the indexed task\n\
+    -cd index date       : change task to given date\
     '
 
 
@@ -150,10 +151,26 @@ def update():
     with open('tasks.txt', "w", encoding='utf-8') as tasks:
         json.dump(taskdict, tasks)
 
+def changeDate():
+    input_idx = sys.argv[2]
+    input_date = sys.argv[3]
+    for datee in list(taskdict.keys()): # datee: keys of a dict i.e. date, where values are also dicts
+        if list(taskdict[datee]).count(input_idx) > 0: # taskdict[datee]: keys i.e. indexes → found the date
+            taskmsg = taskdict[datee][input_idx]
+            taskdict[datee].pop(input_idx)
+            if(input_date not in taskdict):
+                taskdict[input_date] = {}
+            taskdict[input_date][input_idx] = taskmsg
+            print(f'task {ansi.fg_yellow}{taskmsg}{ansi.reset} from {ansi.underline}{datee}{ansi.reset} altered to {ansi.underline}{input_date}{ansi.reset}')
+            break
+
+    with open('tasks.txt', "w", encoding='utf-8') as tasks:
+        json.dump(taskdict, tasks)
+
 def delete():
     # global taskdict
     try:
-        if sys.argv[2] == '.':
+        if sys.argv[2] == '.': #wtf is this
             taskdict.pop(sys.argv[3])
         elif len(sys.argv) == 4: # if have argv 3 i.e. date is given, basically obsolete
             targetdate = taskdict[sys.argv[3]]
@@ -161,7 +178,7 @@ def delete():
                 taskdict[sys.argv[3]].pop(sys.argv[2])
             except:
                 print(errormsg.nothingdeleted)
-        else: # if no argv 3 i.e. no date given → seach through all the dates
+        else: # if no argv 3 i.e. no date given → search through all the dates
             for datee in list(taskdict.keys()): # datee: keys of a dict i.e. date, where values are also dicts
                 if list(taskdict[datee]).count(sys.argv[2]) > 0: # taskdict[datee]: keys i.e. indexes → found the date
                     target = taskdict[datee].pop(sys.argv[2]) # found & pop
@@ -232,6 +249,8 @@ try:
         alter()
     elif sys.argv[1] == '-u':
         update()
+    elif sys.argv[1] == '-cd':
+        changeDate()
     else:
         print(errormsg.wrongcommand)
 
