@@ -53,6 +53,7 @@ e.g.
        -ws task_name (date) : write and show
        -a index msg         : alter the description of the indexed task
        -u index msg         : update task i.e. append msg to the indexed task
+       -cd index date       : change task to given date
    ```
 
 ## demo
